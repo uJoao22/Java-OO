@@ -6,13 +6,22 @@ public class TestaMetodo {
 		Conta contaDoPaulo = new Conta();
 
 		contaDoPaulo.saldo = 100;
-		System.out.println("Saldo inicial: "+contaDoPaulo.saldo);
-		
+
 		contaDoPaulo.deposita(50);
-		System.out.println("Saldo após deposito: "+contaDoPaulo.saldo);
+		System.out.println("Saldo do Paulo após deposito: "+contaDoPaulo.saldo);
 		
-		contaDoPaulo.saca(25);
-		System.out.println("Saldo após o saque: "+contaDoPaulo.saldo);
+		contaDoPaulo.saca(20);
+		System.out.println("\nSaldo do Paulo após o saque: "+contaDoPaulo.saldo);
 		
+		Conta contaDaMarcela = new Conta();
+		contaDaMarcela.deposita(1000);
+		
+		if(contaDaMarcela.transfere(300, contaDoPaulo))
+			System.out.println("\n\nTransferencia efetuada com sucesso!");
+		else
+			System.out.println("\nSaldo insuficiente");
+			
+		System.out.println("\nSaldo da Marcelo após transferencia: "+contaDaMarcela.saldo);
+		System.out.println("\nSaldo do Paulo após transferencia: "+contaDoPaulo.saldo);
 	}	
 }
