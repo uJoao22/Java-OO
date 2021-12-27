@@ -48,6 +48,13 @@ public class Conta {
 
 	public void setNumero(int numero) {
 		this.numero = numero;
+	}
+
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
 	}	
 	
+	public Cliente getTitular() {
+		return titular;
+	}
 }
