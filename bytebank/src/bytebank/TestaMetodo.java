@@ -10,5 +10,9 @@ public class TestaMetodo {
 		
 		contaDoPaulo.deposita(50);
 		System.out.println("Saldo após deposito: "+contaDoPaulo.saldo);
+		
+		contaDoPaulo.saca(25);
+		System.out.println("Saldo após o saque: "+contaDoPaulo.saldo);
+		
 	}	
 }
