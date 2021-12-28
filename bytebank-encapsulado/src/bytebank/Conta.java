@@ -1,6 +1,5 @@
 package bytebank;
 
-
 public class Conta {
 	private double saldo;
 	private int agencia;
@@ -8,6 +7,12 @@ public class Conta {
 	
 	//Criando a referencia para o objeto Cliente
 	private Cliente titular;
+	
+	public Conta(int agencia, int numero) {
+		this.agencia = agencia;
+		this.numero = numero;
+		System.out.println("Etou criando uma conta");
+	}
 	
 	public void deposita(double valor){
 		this.saldo += valor;
@@ -39,6 +44,10 @@ public class Conta {
 	}
 
 	public void setAgencia(int agencia) {
+		if(agencia <= 0) {
+			System.out.println("Agencia não pode ser menor ou igual a 0");
+			return;
+		}
 		this.agencia = agencia;
 	}
 
@@ -47,6 +56,10 @@ public class Conta {
 	}
 
 	public void setNumero(int numero) {
+		if(numero <= 0) {
+			System.out.println("O número da conta não pode ser menor ou igual a 0");
+			return;
+		}
 		this.numero = numero;
 	}
 
