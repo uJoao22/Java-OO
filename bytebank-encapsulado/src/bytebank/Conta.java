@@ -8,10 +8,12 @@ public class Conta {
 	//Criando a referencia para o objeto Cliente
 	private Cliente titular;
 	
+	private static int total;
+	
 	public Conta(int agencia, int numero) {
+		Conta.total++;
 		this.agencia = agencia;
 		this.numero = numero;
-		System.out.println("Etou criando uma conta");
 	}
 	
 	public void deposita(double valor){
@@ -69,5 +71,9 @@ public class Conta {
 	
 	public Cliente getTitular() {
 		return titular;
+	}
+	
+	public static int getTotal() {
+		return total;
 	}
 }
